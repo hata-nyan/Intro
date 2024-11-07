@@ -99,11 +99,26 @@ pipができない場合は、PATHが通っていないと思われる。
 ソフト：ラズパイ4B+　=>　RaspiOS bullseye　すべてラズパイ５へ更新ずみ
        ラズパイ5　=>　RaspiOS bookmorm　※仮想環境が必要．．．ここでもつまづいた。
 
+（電気代が安いので、えさ代が少なくて済みます。燃える心配もないし。夏場の温度管理は重要。）
+
        python 3.7 ~ 3.11.2(最新) 
        spyder (確認程度)
        libraoffice(Excelのようなもの)
 
-（電気代が安いので、えさ代が少なくて済みます。燃える心配もないし。夏場の温度管理は重要。）
+botの仕様(一部):
+
+    import pandas as pd
+    import retry
+    import requests
+    from datetime import datetime,timedelta,date  
+    import os,sys,time
+
+※candkestick(=k-line)を扱うには時系列データを扱うため、pandasは必須です。
+※numpyは使っていません。
+※requestsは、APIたたくのに使います。
+※websocketは使っていますが、オプションです。
+※from datetime import datetime,timedelta,date で直接 datetimeクラスのdatetime,timedelta,dataメソッドが読み出せるの知らなくて、ここもつまづきポイントでした。
+※ファイル操作を扱うos、sys.exit()で強制的にプログラムを終了するコマンド、botに休息を与える time.sleep() は必須です。    
 
 その他
 
